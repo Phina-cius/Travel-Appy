@@ -1,0 +1,172 @@
+
+        /*========================google=======================*/
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        /*================Variable css========================*/
+        :root{
+            --header-height: 3.5rem;
+
+            /*==================Colors=======================*/
+            /*colo mode hsl(hue,saturation,lightness)*/
+            --white-color: hsl(0,0%,100%);
+            --black-color: hsl(0,0%,0%);
+
+            /*=============Font and typography==========*/
+            /*5rem =8px / 1rem=16px....*/
+            --body-font: "Montserrat", sans-serif;
+            --biggest-font-size: 2rem;
+            --big-font-size: 1.5rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+
+            /*==========Font weight=======*/
+            --font-regular: 400;
+            --font-semi--bold: 600;
+            --font-bold: 700;
+
+            /*==========Z index=========*/
+            --z-tooltip: 10;
+            --Z-fixed: 100;
+
+        }
+
+
+        /*========Responsive typography======*/
+        @media screen and (min-width:1150px) {
+            :root{
+                --biggest-font-size: 4rem;
+                --big-font-size: 3rem;
+                --h3--font-size: 1.25rem;
+                --mormal-font-size: 1rem;
+            }
+            
+        }
+        /*============Base=============*/
+        
+        *{
+            outline: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: var(--body-font);
+            color: var(--white-color);
+            background: var(--black-color);
+            font-size: var(--mormal-font-size);
+        }
+        ul{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        img{
+            display: block;
+            min-width: 100%;
+            height: auto;
+        }
+        /*==========Reusable css classes==========*/
+        .container{
+            max-width: 1120px;
+            margin-inline: 1.5rem;
+        }
+        main{
+            overflow: hidden;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: transparent;
+            width: 100%;
+
+        }
+        .nav{
+            position: relative;
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo{
+            color: var(--white-color);
+            font-weight: var(--font-bold);
+            text-transform: uppercase;
+        }
+        .nav-logo .logo-circle{
+            padding: 10px 10px 10px 10px;
+            background: white;
+            border-radius: 50%;
+            color: brown;
+            box-shadow: 2px 2px 5px var(--white-color);
+        }
+        .nav-logo .logo-name{
+            position: relative;
+            color: brown;
+
+        }
+        .nav-logo .logo-name::before{
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: -8px;
+            right: 8px;
+            height: 2px;
+            width: 106%;
+            background: var(--white-color);
+            box-shadow: 5px 2px 5px var(--white-color);
+        }
+
+
+        .toggle-btn,.closing-btn{
+           font-weight: var(--font-bold);
+            cursor: pointer;
+        }
+       @media screen and (max-width: 1150px) {
+         .nav-menu {
+             position: fixed;
+             top: 0;
+             right: -100%;
+             width: 80%;
+             height: 100%;
+             background: rgb(251, 247, 247 ,0.2);
+             backdrop-filter: blur(10px);
+             transition: 0.4s;
+             border-left: 4px solid black;
+             padding: 5.9rem 0.9rem 0.5rem;
+
+
+         }
+           .show-menu{
+               right: 0;
+           }
+       }
+        .closing-btn{
+            position: absolute;
+            top: 1.3rem;
+            right: 1.5rem;
+        }
+
+        .nav-menu .nav-list{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+        .nav-menu .nav-item{
+            place-content: center left;
+            width: 100%;
+            height: 60px;
+
+            cursor: pointer;
+        }
+        .nav-menu .nav-link{
+            color: var(--white-color);
+            text-transform: uppercase;
+            font-weight: var(--font-bold);
+            width: 100%;
+            background: yellow;
+
+        }
+
